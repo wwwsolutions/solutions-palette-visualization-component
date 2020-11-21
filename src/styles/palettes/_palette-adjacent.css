@@ -1,0 +1,96 @@
+/* red, red-orange, and blue-purple */
+.palette-adjacent { 
+  /* 
+  
+  ♔ ♔ ♔ PALETTE MODIFIERS ♔ ♔ ♔
+  
+  palette fine tuning
+
+  -----------------------------------*/
+
+  $step: 10; /* 0 <> +0 */
+  $modifier: 1.500; 
+  
+  /* 
+  
+  ♔ ♔ ♔ BASE COLORS DEFINITION ♔ ♔ ♔
+  
+    adjust/modify individual base color
+  
+  -----------------------------------*/
+
+  /* <primary_colors> */
+  $red: color-mod(#f41316
+    hue(+0) /* deg */
+    saturation(-0%)
+    contrast(100%)
+    lightness(+0%)
+    whiteness(+0%)
+    blackness(+0%)
+    tint(0%)
+    shade(0%)
+    alpha(100%)
+    );
+
+  $red-orange: color-mod(#ff5722
+    hue(+0) /* deg */
+    saturation(+0%) 
+    contrast(100%) 
+    lightness(+0%) 
+    whiteness(+0%) 
+    blackness(+0%) 
+    tint(0%) 
+    shade(0%)
+    alpha(100%)
+  );
+    
+  $blue-purple: color-mod(#673ab7
+    hue(+0) /* deg */
+    saturation(-0%) 
+    contrast(100%) 
+    lightness(+0%) 
+    whiteness(+0%) 
+    blackness(+0%) 
+    tint(0%) 
+    shade(0%)
+    alpha(100%)
+  );
+  
+  /* 
+  
+  ♔ ♔ ♔ COLOR VARIANTS DEFINITION ♔ ♔ ♔
+  
+    4 * tint | base color | 4 * shade
+
+  -----------------------------------*/
+  
+  --r100: color-mod($red hue(+0) saturation(+0%) lightness(+20%) tint(resolve(4 * ($step * $modifier))%));
+  --r200: color-mod($red hue(+0) saturation(+0%) lightness(+15%) tint(resolve(3 * ($step * $modifier))%));
+  --r300: color-mod($red hue(+0) saturation(+0%) lightness(+10%) tint(resolve(2 * ($step * $modifier))%));
+  --r400: color-mod($red hue(+0) saturation(+0%) lightness(+5%) tint(resolve(1 * ($step * $modifier))%));
+  --r500: color-mod($red);
+  --r600: color-mod($red hue(+0) saturation(+0%) lightness(-5%) shade(resolve(1 * ($step * $modifier))%));
+  --r700: color-mod($red hue(+0) saturation(+0%) lightness(-10%) shade(resolve(2 * ($step * $modifier))%));
+  --r800: color-mod($red hue(+0) saturation(+0%) lightness(-15%) shade(resolve(3 * ($step * $modifier))%));
+  --r900: color-mod($red hue(+0) saturation(+0%) lightness(-20%) shade(resolve(4 * ($step * $modifier))%));
+  
+  --bp100: color-mod($blue-purple hue(+0) saturation(+0%) lightness(+20%) tint(resolve(4 * ($step * $modifier))%));
+  --bp200: color-mod($blue-purple hue(+0) saturation(+0%) lightness(+15%) tint(resolve(3 * ($step * $modifier))%));
+  --bp300: color-mod($blue-purple hue(+0) saturation(+0%) lightness(+10%) tint(resolve(2 * ($step * $modifier))%));
+  --bp400: color-mod($blue-purple hue(+0) saturation(+0%) lightness(+5%) tint(resolve(1 * ($step * $modifier))%));
+  --bp500: color-mod($blue-purple);
+  --bp600: color-mod($blue-purple hue(+0) saturation(+0%) lightness(-5%) shade(resolve(1 * ($step * $modifier))%));
+  --bp700: color-mod($blue-purple hue(+0) saturation(+0%) lightness(-10%) shade(resolve(2 * ($step * $modifier))%));
+  --bp800: color-mod($blue-purple hue(+0) saturation(+0%) lightness(-15%) shade(resolve(3 * ($step * $modifier))%));
+  --bp900: color-mod($blue-purple hue(+0) saturation(+0%) lightness(-20%) shade(resolve(4 * ($step * $modifier))%));
+
+  --ro100: color-mod($red-orange hue(+0) saturation(+0%) lightness(+20%) tint(resolve(4 * ($step * $modifier))%));
+  --ro200: color-mod($red-orange hue(+0) saturation(+0%) lightness(+15%) tint(resolve(3 * ($step * $modifier))%));
+  --ro300: color-mod($red-orange hue(+0) saturation(+0%) lightness(+10%) tint(resolve(2 * ($step * $modifier))%));
+  --ro400: color-mod($red-orange hue(+0) saturation(+0%) lightness(+5%)  tint(resolve(1 * ($step * $modifier))%));
+  --ro500: color-mod($red-orange);
+  --ro600: color-mod($red-orange hue(+0) saturation(+0%) lightness(-5%) shade(resolve(1 * ($step * $modifier))%));
+  --ro700: color-mod($red-orange hue(+0) saturation(+0%) lightness(-10%) shade(resolve(2 * ($step * $modifier))%));
+  --ro800: color-mod($red-orange hue(+0) saturation(+0%) lightness(-15%) shade(resolve(3 * ($step * $modifier))%));
+  --ro900: color-mod($red-orange hue(+0) saturation(+0%) lightness(-20%) shade(resolve(4 * ($step * $modifier))%));
+}

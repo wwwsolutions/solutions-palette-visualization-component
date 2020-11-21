@@ -1,0 +1,12 @@
+/* https://www.eggradients.com/category/metal-gradient?83ff460c_page=2 */
+.gradient {
+  &--bg-usual-suspect {
+    background-color: #000;
+    background-image: linear-gradient(315deg, #7f8c8d 0%, #000 74%);
+  }
+  
+  &--bg-early-retirement {
+    background-color: #000;
+    background-image: linear-gradient(315deg, #000 0%, #414141 74%);
+  }
+}

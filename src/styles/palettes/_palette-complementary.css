@@ -1,0 +1,76 @@
+/* red, green */
+.palette-complementary { 
+
+  /* 
+  
+  ♔ ♔ ♔ PALETTE MODIFIERS ♔ ♔ ♔
+  
+  palette fine tuning
+
+  -----------------------------------*/
+
+  $step: 10; /* 0 <> 20 */
+  $modifier: 1.72; 
+  
+  /* 
+  
+  ♔ ♔ ♔ BASE COLORS DEFINITION ♔ ♔ ♔
+  
+    adjust/modify individual base color
+  
+  -----------------------------------*/
+
+  /* <primary_colors> */
+  $red: color-mod(#f41316
+    hue(+ 0) /* deg */
+    saturation(- 0%) 
+    contrast(100%) 
+    lightness(+ 0%) 
+    whiteness(+ 0%) 
+    blackness(+ 0%) 
+    tint(0%) 
+    shade(0%)
+    alpha(100%)
+    );
+
+  $green: color-mod(#4caf50
+    hue(+ 0) /* deg */
+    saturation(- 0%) 
+    contrast(100%) 
+    lightness(+ 0%) 
+    whiteness(+ 0%) 
+    blackness(+ 0%) 
+    tint(0%) 
+    shade(0%)
+    alpha(100%)
+  );
+
+  /* 
+  
+  ♔ ♔ ♔ COLOR VARIANTS DEFINITION ♔ ♔ ♔
+  
+    4 * tint | base color | 4 * shade
+
+  -----------------------------------*/
+  
+  --r100: color-mod($red tint(resolve(4 * ($step * $modifier))%));
+  --r200: color-mod($red tint(resolve(3 * ($step * $modifier))%));
+  --r300: color-mod($red tint(resolve(2 * ($step * $modifier))%));
+  --r400: color-mod($red tint(resolve(1 * ($step * $modifier))%));
+  --r500: color-mod($red);
+  --r600: color-mod($red shade(resolve(1 * ($step * $modifier))%));
+  --r700: color-mod($red shade(resolve(2 * ($step * $modifier))%));
+  --r800: color-mod($red shade(resolve(3 * ($step * $modifier))%));
+  --r900: color-mod($red shade(resolve(4 * ($step * $modifier))%));
+
+  --g100: color-mod($green tint(resolve(4 * ($step * $modifier))%));
+  --g200: color-mod($green tint(resolve(3 * ($step * $modifier))%));
+  --g300: color-mod($green tint(resolve(2 * ($step * $modifier))%));
+  --g400: color-mod($green tint(resolve(1 * ($step * $modifier))%));
+  --g500: color-mod($green);
+  --g600: color-mod($green shade(resolve(1 * ($step * $modifier))%));
+  --g700: color-mod($green shade(resolve(2 * ($step * $modifier))%));
+  --g800: color-mod($green shade(resolve(3 * ($step * $modifier))%));
+  --g900: color-mod($green shade(resolve(4 * ($step * $modifier))%));
+
+}

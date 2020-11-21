@@ -1,0 +1,57 @@
+/* https://codepen.io/wadehammes/pen/mpJMPP */
+
+[data-tooltip] {
+  position: relative;
+
+  &::before,
+  &::after {
+    opacity: 0;
+    visibility: hidden;
+    margin-top: -0.5em;
+    z-index: 1;
+  }
+
+  &::before {
+    content: attr(data-tooltip);
+    display: block;
+    text-align: center;
+    border-radius: 4px;
+    background: inherit;
+    line-height: 1.1;
+    padding: 0.75em 0.95em;
+    color: black;
+    font-size: 1.2em;
+    font-weight: bolder;
+    border: solid 1px black;
+    position: absolute;
+    top: -90%;
+    width: min-content;
+    height: 4em;
+    min-height: min-content;
+    white-space: pre;
+    transition: all 0.3s;
+  }
+
+  &::after {
+    content: "";
+    border: 10px solid transparent;
+    border-top-color: black;
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    margin-left: -10px;
+  }
+
+  &:hover {
+    cursor: help;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    opacity: 1;
+    visibility: visible;
+    box-shadow: 
+      0px 10px 13px -7px #000, 
+      5px 5px 15px 5px rgba(0, 0, 0, 0);
+  }
+}

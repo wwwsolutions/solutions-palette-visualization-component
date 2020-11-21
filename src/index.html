@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Solutions Palette Visualization Component</title>
+    <meta name="keywords" content="PostCSS Javascript" />
+    <meta
+      name="description"
+      content="Et ipsa scientia potestas est ~ Bacon, Francis"
+    />
+  </head>
+
+  <body>
+
+  <section class="section">
+
+    <article class="pvc pvc--center pvc--mt pvc--mb pvc--borders palette-color-scheme">
+      <header class="pvc__header">
+        <h2 class="pvc__title">Palette Visualizer</h2>
+      </header>
+
+      <div class="pvc__combination-controls">
+        <h4 class="pvc__combination-title">Select color combination</h4>
+        <ul class="pvc__combination-selector">
+          <li class="pvc__combination color-scheme">⌘ Color Scheme</li>
+          <li class="pvc__combination monochromatic">Monochromatic (1-color)</li>
+          <li class="pvc__combination complementary">Complementary (2-colors)</li>
+          <li class="pvc__combination analogous">Analogous (5-colors)</li>
+          <li class="pvc__combination adjacent">Adjacent (3-colors)</li>
+          <li class="pvc__combination split_complementary">Split Complementary (3-colors)</li>
+          <li class="pvc__combination triadic">Triadic (3-colors)</li>
+          <li class="pvc__combination tetradic">Tetradic (4-colors)</li>
+          <li class="pvc__combination rectangular_tetradic pvc__combination--selected">Rectangular Tetradic (4-colors)</li>
+        </ul>
+      </div>
+
+      <ul class="pvc__legend pvc__legend--pull-down">
+        <li class="pvc__legend-item"><span class="pvc__legend-ico pvc__legend-ico--primary"></span>Primary Color</li>
+        <li class="pvc__legend-item"><span class="pvc__legend-ico pvc__legend-ico--secondary"></span>Secondary Color</li>
+        <li class="pvc__legend-item"><span class="pvc__legend-ico pvc__legend-ico--tertiary"></span>Tertiary Color</li>
+      </ul>
+      <figure class="pvc__wheel">
+        <ul>
+          <li class="pvc--color-b-r500 pvc--rotated-by-0"></li>
+          <li class="pvc--color-b-rp500 pvc--rotated-by-30"></li>
+          <li class="pvc--color-b-p500 pvc--rotated-by-60"></li>
+          <li class="pvc--color-b-bp500 pvc--rotated-by-90"></li>
+          <li class="pvc--color-b-b500 pvc--rotated-by-120"></li>
+          <li class="pvc--color-b-bg500 pvc--rotated-by-150"></li>
+          <li class="pvc--color-b-g500 pvc--rotated-by-180"></li>
+          <li class="pvc--color-b-yg500 pvc--rotated-by-210"></li>
+          <li class="pvc--color-b-y500 pvc--rotated-by-240"></li>
+          <li class="pvc--color-b-yo500 pvc--rotated-by-270"></li>
+          <li class="pvc--color-b-o500 pvc--rotated-by-300"></li>
+          <li class="pvc--color-b-ro500 pvc--rotated-by-330"></li>
+        </ul>      
+        <ul class="pvc__wheel--overlay">
+          <li class="pvc--icon-primary pvc--rotated-by-0"></li>
+          <li class="pvc--icon-tertiary pvc--rotated-by-30"></li>
+          <li class="pvc--icon-secondary pvc--rotated-by-60"></li>
+          <li class="pvc--icon-tertiary pvc--rotated-by-90"></li>
+          <li class="pvc--icon-primary pvc--rotated-by-120"></li>
+          <li class="pvc--icon-tertiary pvc--rotated-by-150"></li>
+          <li class="pvc--icon-secondary pvc--rotated-by-180"></li>
+          <li class="pvc--icon-tertiary pvc--rotated-by-210"></li>
+          <li class="pvc--icon-primary pvc--rotated-by-240"></li>
+          <li class="pvc--icon-tertiary pvc--rotated-by-270"></li>
+          <li class="pvc--icon-secondary pvc--rotated-by-300"></li>
+          <li class="pvc--icon-tertiary pvc--rotated-by-330"></li>
+        </ul>
+        <figcaption>Color Wheel</figcaption>    
+      </figure>        
+      <main class="pvc__palette">
+        <ul class="pvc__color-set pvc__color-set--red">
+          <li class="pvc--color-r100"><span class="pvc__cell">100</span></li>          
+          <li class="pvc--color-r200"><span class="pvc__cell">200</span></li>
+          <li class="pvc--color-r300"><span class="pvc__cell">300</span></li>
+          <li class="pvc--color-r400"><span class="pvc__cell">400</span></li>
+          <li class="pvc--color-r500" data-tooltip="primary &#xa; '$red'"><span class="pvc__cell pvc__cell--ico pvc--icon-primary"></span></li>
+          <li class="pvc--color-r600"><span class="pvc__cell">600</span></li>
+          <li class="pvc--color-r700"><span class="pvc__cell">700</span></li>
+          <li class="pvc--color-r800"><span class="pvc__cell">800</span></li>
+          <li class="pvc--color-r900"><span class="pvc__cell">900</span></li>
+        </ul>
+        <ul class="pvc__color-set pvc__color-set--blue">
+          <li class="pvc--color-b100"><span class="pvc__cell">100</span></li>
+          <li class="pvc--color-b200"><span class="pvc__cell">200</span></li>
+          <li class="pvc--color-b300"><span class="pvc__cell">300</span></li>
+          <li class="pvc--color-b400"><span class="pvc__cell">400</span></li>
+          <li class="pvc--color-b500" data-tooltip="primary &#xa; '$blue'"><span class="pvc__cell pvc__cell--ico pvc--icon-primary"></span></li>
+          <li class="pvc--color-b600"><span class="pvc__cell">600</span></li>
+          <li class="pvc--color-b700"><span class="pvc__cell">700</span></li>
+          <li class="pvc--color-b800"><span class="pvc__cell">800</span></li>
+          <li class="pvc--color-b900"><span class="pvc__cell">900</span></li>
+        </ul>
+        <ul class="pvc__color-set pvc__color-set--yellow">
+          <li class="pvc--color-y100"><span class="pvc__cell">100</span></li>
+          <li class="pvc--color-y200"><span class="pvc__cell">200</span></li>
+          <li class="pvc--color-y300"><span class="pvc__cell">300</span></li>
+          <li class="pvc--color-y400"><span class="pvc__cell">400</span></li>
+          <li class="pvc--color-y500" data-tooltip="primary &#xa; '$yellow'"><span class="pvc__cell pvc__cell--ico pvc--icon-primary"></span></li>
+          <li class="pvc--color-y600"><span class="pvc__cell">600</span></li>
+          <li class="pvc--color-y700"><span class="pvc__cell">700</span></li>
+          <li class="pvc--color-y800"><span class="pvc__cell">800</span></li>
+          <li class="pvc--color-y900"><span class="pvc__cell">900</span></li>
+        </ul>
+        <ul class="pvc__color-set pvc__color-set--orange">
+          <li class="pvc--color-o100"><span class="pvc__cell">100</span></li>
+          <li class="pvc--color-o200"><span class="pvc__cell">200</span></li>
+          <li class="pvc--color-o300"><span class="pvc__cell">300</span></li>
+          <li class="pvc--color-o400"><span class="pvc__cell">400</span></li>
+          <li class="pvc--color-o500" data-tooltip="secondary &#xa; '$orange'"><span class="pvc__cell pvc__cell--ico pvc--icon-secondary"></span></li>
+          <li class="pvc--color-o600"><span class="pvc__cell">600</span></li>
+          <li class="pvc--color-o700"><span class="pvc__cell">700</span></li>
+          <li class="pvc--color-o800"><span class="pvc__cell">800</span></li>
+          <li class="pvc--color-o900"><span class="pvc__cell">900</span></li>
+        </ul>
+        <ul class="pvc__color-set pvc__color-set--green">
+          <li class="pvc--color-g100"><span class="pvc__cell">100</span></li>
+          <li class="pvc--color-g200"><span class="pvc__cell">200</span></li>
+          <li class="pvc--color-g300"><span class="pvc__cell">300</span></li>
+          <li class="pvc--color-g400"><span class="pvc__cell">400</span></li>
+          <li class="pvc--color-g500" data-tooltip="secondary &#xa; '$green'"><span class="pvc__cell pvc__cell--ico pvc--icon-secondary"></span></li>
+          <li class="pvc--color-g600"><span class="pvc__cell">600</span></li>
+          <li class="pvc--color-g700"><span class="pvc__cell">700</span></li>
+          <li class="pvc--color-g800"><span class="pvc__cell">800</span></li>
+          <li class="pvc--color-g900"><span class="pvc__cell">900</span></li>
+        </ul>
+        <ul class="pvc__color-set pvc__color-set--purple">
+          <li class="pvc--color-p100"><span class="pvc__cell">100</span></li>
+          <li class="pvc--color-p200"><span class="pvc__cell">200</span></li>
+          <li class="pvc--color-p300"><span class="pvc__cell">300</span></li>
+          <li class="pvc--color-p400"><span class="pvc__cell">400</span></li>
+          <li class="pvc--color-p500" data-tooltip="secondary &#xa; '$purple'"><span class="pvc__cell pvc__cell--ico pvc--icon-secondary"></span></li>
+          <li class="pvc--color-p600"><span class="pvc__cell">600</span></li>
+          <li class="pvc--color-p700"><span class="pvc__cell">700</span></li>
+          <li class="pvc--color-p800"><span class="pvc__cell">800</span></li>
+          <li class="pvc--color-p900"><span class="pvc__cell">900</span></li>
+        </ul>
+        <ul class="pvc__color-set pvc__color-set--red_orange">
+          <li class="pvc--color-ro100"><span class="pvc__cell">100</span></li>
+          <li class="pvc--color-ro200"><span class="pvc__cell">200</span></li>
+          <li class="pvc--color-ro300"><span class="pvc__cell">300</span></li>
+          <li class="pvc--color-ro400"><span class="pvc__cell">400</span></li>
+          <li class="pvc--color-ro500" data-tooltip="tertiary &#xa; '$red-orange'"><span class="pvc__cell pvc__cell--ico pvc--icon-tertiary"></span></li>
+          <li class="pvc--color-ro600"><span class="pvc__cell">600</span></li>
+          <li class="pvc--color-ro700"><span class="pvc__cell">700</span></li>
+          <li class="pvc--color-ro800"><span class="pvc__cell">800</span></li>
+          <li class="pvc--color-ro900"><span class="pvc__cell">900</span></li>
+        </ul>
+        <ul class="pvc__color-set pvc__color-set--yellow_orange">
+          <li class="pvc--color-yo100"><span class="pvc__cell">100</span></li>
+          <li class="pvc--color-yo200"><span class="pvc__cell">200</span></li>
+          <li class="pvc--color-yo300"><span class="pvc__cell">300</span></li>
+          <li class="pvc--color-yo400"><span class="pvc__cell">400</span></li>
+          <li class="pvc--color-yo500" data-tooltip="tertiary &#xa; '$yellow-orange'"><span class="pvc__cell pvc__cell--ico pvc--icon-tertiary"></span></li>
+          <li class="pvc--color-yo600"><span class="pvc__cell">600</span></li>
+          <li class="pvc--color-yo700"><span class="pvc__cell">700</span></li>
+          <li class="pvc--color-yo800"><span class="pvc__cell">800</span></li>
+          <li class="pvc--color-yo900"><span class="pvc__cell">900</span></li>
+        </ul>
+        <ul class="pvc__color-set pvc__color-set--yellow_green">
+          <li class="pvc--color-yg100"><span class="pvc__cell">100</span></li>
+          <li class="pvc--color-yg200"><span class="pvc__cell">200</span></li>
+          <li class="pvc--color-yg300"><span class="pvc__cell">300</span></li>
+          <li class="pvc--color-yg400"><span class="pvc__cell">400</span></li>
+          <li class="pvc--color-yg500" data-tooltip="tertiary &#xa; '$yellow-green'"><span class="pvc__cell pvc__cell--ico pvc--icon-tertiary"></span></li>
+          <li class="pvc--color-yg600"><span class="pvc__cell">600</span></li>
+          <li class="pvc--color-yg700"><span class="pvc__cell">700</span></li>
+          <li class="pvc--color-yg800"><span class="pvc__cell">800</span></li>
+          <li class="pvc--color-yg900"><span class="pvc__cell">900</span></li>
+        </ul>
+        <ul class="pvc__color-set pvc__color-set--blue_green">
+          <li class="pvc--color-bg100"><span class="pvc__cell">100</span></li>
+          <li class="pvc--color-bg200"><span class="pvc__cell">200</span></li>
+          <li class="pvc--color-bg300"><span class="pvc__cell">300</span></li>
+          <li class="pvc--color-bg400"><span class="pvc__cell">400</span></li>
+          <li class="pvc--color-bg500" data-tooltip="tertiary &#xa; '$blue-green'"><span class="pvc__cell pvc__cell--ico pvc--icon-tertiary"></span></li>
+          <li class="pvc--color-bg600"><span class="pvc__cell">600</span></li>
+          <li class="pvc--color-bg700"><span class="pvc__cell">700</span></li>
+          <li class="pvc--color-bg800"><span class="pvc__cell">800</span></li>
+          <li class="pvc--color-bg900"><span class="pvc__cell">900</span></li>
+        </ul>
+        <ul class="pvc__color-set pvc__color-set--blue_purple">
+          <li class="pvc--color-bp100"><span class="pvc__cell">100</span></li>
+          <li class="pvc--color-bp200"><span class="pvc__cell">200</span></li>
+          <li class="pvc--color-bp300"><span class="pvc__cell">300</span></li>
+          <li class="pvc--color-bp400"><span class="pvc__cell">400</span></li>
+          <li class="pvc--color-bp500" data-tooltip="tertiary &#xa; '$blue-purple'"><span class="pvc__cell pvc__cell--ico pvc--icon-tertiary"></span></li>
+          <li class="pvc--color-bp600"><span class="pvc__cell">600</span></li>
+          <li class="pvc--color-bp700"><span class="pvc__cell">700</span></li>
+          <li class="pvc--color-bp800"><span class="pvc__cell">800</span></li>
+          <li class="pvc--color-bp900"><span class="pvc__cell">900</span></li>
+        </ul>
+        <ul class="pvc__color-set pvc__color-set--red_purple">
+          <li class="pvc--color-rp100"><span class="pvc__cell">100</span></li>
+          <li class="pvc--color-rp200"><span class="pvc__cell">200</span></li>
+          <li class="pvc--color-rp300"><span class="pvc__cell">300</span></li>
+          <li class="pvc--color-rp400"><span class="pvc__cell">400</span></li>
+          <li class="pvc--color-rp500" data-tooltip="tertiary &#xa; '$red-purple'"><span class="pvc__cell pvc__cell--ico pvc--icon-tertiary"></span></li>
+          <li class="pvc--color-rp600"><span class="pvc__cell">600</span></li>
+          <li class="pvc--color-rp700"><span class="pvc__cell">700</span></li>
+          <li class="pvc--color-rp800"><span class="pvc__cell">800</span></li>
+          <li class="pvc--color-rp900"><span class="pvc__cell">900</span></li>
+        </ul>
+      </main>
+      <footer class="pvc__footer pvc__footer--pull-up">
+        <p class="pvc__footer-txt">Hover over color cells for details.</p>
+      </footer>
+    </article>
+  
+  </section>
+
+  </body>
+</html>

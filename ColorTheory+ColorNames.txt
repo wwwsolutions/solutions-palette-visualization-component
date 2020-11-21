@@ -1,0 +1,31 @@
+https://www.oberlo.com/blog/color-combinations-cheat-sheet
+
+Color Theory
+
+12 colors
+
+<primary_colors>
+  <primary> red                                   r
+  <primary> blue                                  b
+  <primary> yellow                                y  
+
+<secondary_colors> 
+  <secondary> orange [red  + yellow]              o
+  <secondary> green  [yellow + blue]              g
+  <secondary> purple [blue + red]                 p
+
+<tertiary_colors>
+
+  <tertiary> red-orange     [red + orange]        ro
+  <tertiary> yellow-orange  [yellow + orange]     yo
+
+  <tertiary> yellow-green   [yellow + green]      yg
+  <tertiary> blue-green     [blue + green]        bg
+
+  <tertiary> blue-purple    [blue + purple]       bp
+  <tertiary> red-purple     [red + purple]        rp
+
+------------------ reconstructing colors -------
+
+
+

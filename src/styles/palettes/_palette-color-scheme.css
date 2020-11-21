@@ -1,0 +1,201 @@
+/* postcss-color-mod-function
+
+https://github.com/jonathantneal/postcss-color-mod-function?spm=a2c6h.14275010.0.0.7f90209cXUsb52  */
+
+/* COLOR ADJUSTERS
+
+  red() 
+  green() 
+  blue()
+  alpha() | a() 
+  rgb()
+  hue() | h()
+  saturation() | s()
+  lightness() | l()
+  whiteness() | w()
+  blackness() | b()
+  tint() 
+  shade() 
+  blend() 
+  blenda()
+  contrast()
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.palette-color-scheme { 
+
+  /* 
+  
+  ♔ ♔ ♔ PALETTE MODIFIERS ♔ ♔ ♔
+  
+  palette fine tuning
+
+  -----------------------------------*/
+
+  $step: 10; /* 0 <> 20 */
+  $modifier: 1.72; 
+  $hue: hue(+0); /* deg */
+  $saturation: saturation(-0%);
+  $contrast: contrast(100%);
+  $lightness: lightness(+0%);
+  $whiteness: whiteness(+0%);
+  $blackness: blackness(+0%);
+  $tint: tint(0%);
+  $shade: shade(0%);
+  $alpha: alpha(100%);
+  /* 
+  
+  ♔ ♔ ♔ BASE COLORS DEFINITION ♔ ♔ ♔
+  
+    adjust/modify individual base color
+  
+  -----------------------------------*/
+
+  /* <primary_colors> */
+  $red: color-mod( #f41316 $hue $saturation $contrast $lightness $whiteness $blackness $tint $shade $alpha );
+  $blue: color-mod( #3f51b5 $hue $saturation $contrast $lightness $whiteness $blackness $tint $shade $alpha );
+  $yellow: color-mod( #ffeb3b $hue $saturation $contrast $lightness $whiteness $blackness $tint $shade $alpha );
+  
+  /* <secondary_colors> */
+  $orange: color-mod( #ff9800 $hue $saturation $contrast $lightness $whiteness $blackness $tint $shade $alpha );
+  $green: color-mod( #4caf50 $hue $saturation $contrast $lightness $whiteness $blackness $tint $shade $alpha );
+  $purple: color-mod( #9c27b0 $hue $saturation $contrast $lightness $whiteness $blackness $tint $shade $alpha );
+  
+  /* <tertiary_colors> */
+  $red-orange: color-mod( #ff5722 $hue $saturation $contrast $lightness $whiteness $blackness $tint $shade $alpha );
+  $yellow-orange: color-mod( #ffc107 $hue $saturation $contrast $lightness $whiteness $blackness $tint $shade $alpha );
+  $yellow-green: color-mod( #8bc34a $hue $saturation $contrast $lightness $whiteness $blackness $tint $shade $alpha );
+  $blue-green: color-mod( #009688 $hue $saturation $contrast $lightness $whiteness $blackness $tint $shade $alpha );
+  $blue-purple: color-mod( #673ab7 $hue $saturation $contrast $lightness $whiteness $blackness $tint $shade $alpha );
+  $red-purple: color-mod( #e91e63 $hue $saturation $contrast $lightness $whiteness $blackness $tint $shade $alpha );
+
+  /* 
+  
+  ♔ ♔ ♔ COLOR VARIANTS DEFINITION ♔ ♔ ♔
+  
+    4 * tint | base color | 4 * shade
+
+  -----------------------------------*/
+  
+  --r100: color-mod($red tint(resolve(4 * ($step * $modifier))%));
+  --r200: color-mod($red tint(resolve(3 * ($step * $modifier))%));
+  --r300: color-mod($red tint(resolve(2 * ($step * $modifier))%));
+  --r400: color-mod($red tint(resolve(1 * ($step * $modifier))%));
+  --r500: color-mod($red);
+  --r600: color-mod($red shade(resolve(1 * ($step * $modifier))%));
+  --r700: color-mod($red shade(resolve(2 * ($step * $modifier))%));
+  --r800: color-mod($red shade(resolve(3 * ($step * $modifier))%));
+  --r900: color-mod($red shade(resolve(4 * ($step * $modifier))%));
+
+  --rp100: color-mod($red-purple tint(resolve(4 * ($step * $modifier))%));
+  --rp200: color-mod($red-purple tint(resolve(3 * ($step * $modifier))%));
+  --rp300: color-mod($red-purple tint(resolve(2 * ($step * $modifier))%));
+  --rp400: color-mod($red-purple tint(resolve(1 * ($step * $modifier))%));
+  --rp500: color-mod($red-purple);
+  --rp600: color-mod($red-purple shade(resolve(1 * ($step * $modifier))%));
+  --rp700: color-mod($red-purple shade(resolve(2 * ($step * $modifier))%));
+  --rp800: color-mod($red-purple shade(resolve(3 * ($step * $modifier))%));
+  --rp900: color-mod($red-purple shade(resolve(4 * ($step * $modifier))%));
+
+
+  --p100: color-mod($purple tint(resolve(4 * ($step * $modifier))%));
+  --p200: color-mod($purple tint(resolve(3 * ($step * $modifier))%));
+  --p300: color-mod($purple tint(resolve(2 * ($step * $modifier))%));
+  --p400: color-mod($purple tint(resolve(1 * ($step * $modifier))%));
+  --p500: color-mod($purple);
+  --p600: color-mod($purple shade(resolve(1 * ($step * $modifier))%));
+  --p700: color-mod($purple shade(resolve(2 * ($step * $modifier))%));
+  --p800: color-mod($purple shade(resolve(3 * ($step * $modifier))%));
+  --p900: color-mod($purple shade(resolve(4 * ($step * $modifier))%));
+  
+  --bp100: color-mod($blue-purple tint(resolve(4 * ($step * $modifier))%));
+  --bp200: color-mod($blue-purple tint(resolve(3 * ($step * $modifier))%));
+  --bp300: color-mod($blue-purple tint(resolve(2 * ($step * $modifier))%));
+  --bp400: color-mod($blue-purple tint(resolve(1 * ($step * $modifier))%));
+  --bp500: color-mod($blue-purple);
+  --bp600: color-mod($blue-purple shade(resolve(1 * ($step * $modifier))%));
+  --bp700: color-mod($blue-purple shade(resolve(2 * ($step * $modifier))%));
+  --bp800: color-mod($blue-purple shade(resolve(3 * ($step * $modifier))%));
+  --bp900: color-mod($blue-purple shade(resolve(4 * ($step * $modifier))%));
+
+  --b100: color-mod($blue tint(resolve(4 * ($step * $modifier))%));
+  --b200: color-mod($blue tint(resolve(3 * ($step * $modifier))%));
+  --b300: color-mod($blue tint(resolve(2 * ($step * $modifier))%));
+  --b400: color-mod($blue tint(resolve(1 * ($step * $modifier))%));
+  --b500: color-mod($blue);
+  --b600: color-mod($blue shade(resolve(1 * ($step * $modifier))%));
+  --b700: color-mod($blue shade(resolve(2 * ($step * $modifier))%));
+  --b800: color-mod($blue shade(resolve(3 * ($step * $modifier))%));
+  --b900: color-mod($blue shade(resolve(4 * ($step * $modifier))%));
+
+  --bg100: color-mod($blue-green tint(resolve(4 * ($step * $modifier))%));
+  --bg200: color-mod($blue-green tint(resolve(3 * ($step * $modifier))%));
+  --bg300: color-mod($blue-green tint(resolve(2 * ($step * $modifier))%));
+  --bg400: color-mod($blue-green tint(resolve(1 * ($step * $modifier))%));
+  --bg500: color-mod($blue-green);
+  --bg600: color-mod($blue-green shade(resolve(1 * ($step * $modifier))%));
+  --bg700: color-mod($blue-green shade(resolve(2 * ($step * $modifier))%));
+  --bg800: color-mod($blue-green shade(resolve(3 * ($step * $modifier))%));
+  --bg900: color-mod($blue-green shade(resolve(4 * ($step * $modifier))%));
+  
+  --g100: color-mod($green tint(resolve(4 * ($step * $modifier))%));
+  --g200: color-mod($green tint(resolve(3 * ($step * $modifier))%));
+  --g300: color-mod($green tint(resolve(2 * ($step * $modifier))%));
+  --g400: color-mod($green tint(resolve(1 * ($step * $modifier))%));
+  --g500: color-mod($green);
+  --g600: color-mod($green shade(resolve(1 * ($step * $modifier))%));
+  --g700: color-mod($green shade(resolve(2 * ($step * $modifier))%));
+  --g800: color-mod($green shade(resolve(3 * ($step * $modifier))%));
+  --g900: color-mod($green shade(resolve(4 * ($step * $modifier))%));
+
+  --yg100: color-mod($yellow-green tint(resolve(4 * ($step * $modifier))%));
+  --yg200: color-mod($yellow-green tint(resolve(3 * ($step * $modifier))%));
+  --yg300: color-mod($yellow-green tint(resolve(2 * ($step * $modifier))%));
+  --yg400: color-mod($yellow-green tint(resolve(1 * ($step * $modifier))%));
+  --yg500: color-mod($yellow-green);
+  --yg600: color-mod($yellow-green shade(resolve(1 * ($step * $modifier))%));
+  --yg700: color-mod($yellow-green shade(resolve(2 * ($step * $modifier))%));
+  --yg800: color-mod($yellow-green shade(resolve(3 * ($step * $modifier))%));
+  --yg900: color-mod($yellow-green shade(resolve(4 * ($step * $modifier))%));
+
+  --y100: color-mod($yellow tint(resolve(4 * ($step * $modifier))%));
+  --y200: color-mod($yellow tint(resolve(3 * ($step * $modifier))%));
+  --y300: color-mod($yellow tint(resolve(2 * ($step * $modifier))%));
+  --y400: color-mod($yellow tint(resolve(1 * ($step * $modifier))%));
+  --y500: color-mod($yellow);
+  --y600: color-mod($yellow shade(resolve(1 * ($step * $modifier))%));
+  --y700: color-mod($yellow shade(resolve(2 * ($step * $modifier))%));
+  --y800: color-mod($yellow shade(resolve(3 * ($step * $modifier))%));
+  --y900: color-mod($yellow shade(resolve(4 * ($step * $modifier))%));
+
+  --yo100: color-mod($yellow-orange tint(resolve(4 * ($step * $modifier))%));
+  --yo200: color-mod($yellow-orange tint(resolve(3 * ($step * $modifier))%));
+  --yo300: color-mod($yellow-orange tint(resolve(2 * ($step * $modifier))%));
+  --yo400: color-mod($yellow-orange tint(resolve(1 * ($step * $modifier))%));
+  --yo500: color-mod($yellow-orange);
+  --yo600: color-mod($yellow-orange shade(resolve(1 * ($step * $modifier))%));
+  --yo700: color-mod($yellow-orange shade(resolve(2 * ($step * $modifier))%));
+  --yo800: color-mod($yellow-orange shade(resolve(3 * ($step * $modifier))%));
+  --yo900: color-mod($yellow-orange shade(resolve(4 * ($step * $modifier))%));
+
+  --o100: color-mod($orange tint(resolve(4 * ($step * $modifier))%));
+  --o200: color-mod($orange tint(resolve(3 * ($step * $modifier))%));
+  --o300: color-mod($orange tint(resolve(2 * ($step * $modifier))%));
+  --o400: color-mod($orange tint(resolve(1 * ($step * $modifier))%));
+  --o500: color-mod($orange);
+  --o600: color-mod($orange shade(resolve(1 * ($step * $modifier))%));
+  --o700: color-mod($orange shade(resolve(2 * ($step * $modifier))%));
+  --o800: color-mod($orange shade(resolve(3 * ($step * $modifier))%));
+  --o900: color-mod($orange shade(resolve(4 * ($step * $modifier))%));
+
+  --ro100: color-mod($red-orange tint(resolve(4 * ($step * $modifier))%));
+  --ro200: color-mod($red-orange tint(resolve(3 * ($step * $modifier))%));
+  --ro300: color-mod($red-orange tint(resolve(2 * ($step * $modifier))%));
+  --ro400: color-mod($red-orange tint(resolve(1 * ($step * $modifier))%));
+  --ro500: color-mod($red-orange);
+  --ro600: color-mod($red-orange shade(resolve(1 * ($step * $modifier))%));
+  --ro700: color-mod($red-orange shade(resolve(2 * ($step * $modifier))%));
+  --ro800: color-mod($red-orange shade(resolve(3 * ($step * $modifier))%));
+  --ro900: color-mod($red-orange shade(resolve(4 * ($step * $modifier))%));
+
+}
