@@ -28,7 +28,7 @@
       ro100,ro200,ro300,ro400,ro500,ro600,ro700,ro800,ro900;
   }
 
-  /* STYLES */
+  /* ♔ COMPONENT STYLES */
   display: grid;
   gap: 1em 0;
   grid-template-columns: repeat(2, 1fr);
@@ -59,7 +59,7 @@
     border: 1px solid color-mod(black a(30%));
   }
 
-  /* header  block */
+  /* ♔ HEADER */
   &__header {
     grid-area: header;
     background-color: #000;
@@ -74,7 +74,7 @@
     padding-left: 1em;
   }
  
-  /* wheel  block */
+  /* ♔ COLOR WHEEL */
   &__wheel {
     grid-area: wheel;
     display: block;
@@ -162,7 +162,7 @@
     }
   }
   
-  /* combination-controls block */
+  /* ♔ CONTROLS COLOR COMBINATION MENU */
   &__combination-controls {
     grid-area: combination_controls;
     padding-top: 2em;
@@ -199,7 +199,7 @@
       color: color-mod(white a(50%));
     }
 
-    &.color-scheme {
+    &.color-scheme-btn {
       position: absolute;
       top: -6.5em;
       right: .4em;
@@ -219,7 +219,7 @@
     }
   }
 
-  /* legend  block */
+  /* ♔ COLOR LEGEND */
   &__legend {
     grid-area: wheel_legend;
     /* width: 100%; */
@@ -266,17 +266,16 @@
     }
   }
 
-  /* palette block */
+  /* ♔ PALETTE */
   &__palette {
     grid-area: palette;
     display: grid;
     grid-template-rows: min-content;
     grid-template-columns: repeat(12, 1fr);
     grid-template-areas: "red red_purple purple blue_purple blue blue_green green yellow_green yellow yellow_orange orange red_orange";
-    /* background-color: #ddf; */
   }
 
-  &__color-set {
+  &__set {
     display: grid;
     grid-template-rows: repeat(9, min-content);
     grid-template-columns: 1fr;
@@ -285,6 +284,7 @@
       @mixin flexCenter;
     }
   
+    /* color modifiers */
     &--red {
       grid-area: red;
       grid-template-areas:
@@ -454,7 +454,7 @@
     }
   }
   
-  &__cell {
+  &__stencil {
     display: block;
     color: color-mod(#fff blend(hsl(0, 0%, 25%) 50%));
     font-size: 1.2em;
@@ -472,7 +472,7 @@
     }
   }
 
-  /* footer  block */
+  /* ♔ FOOTER */
   &__footer {
     grid-area: footer;
     background-color: color-mod(black a(59%));
@@ -491,17 +491,74 @@
     padding-left: 1em;
   }
 
-/* stylelint-disable */
-/* ⌘ DYNAMICALLY GENERATED RULES ⌘ /////////////////////////////////////////////////////////////////////////////////////////////////////*/
+  /* ♔ TOOLTIPS */
+  & [data-tooltip] {
+    position: relative;
 
-  /* generate color modifiers */
+    &::before,
+    &::after {
+      opacity: 0;
+      visibility: hidden;
+      margin-top: -0.5em;
+      z-index: 1;
+    }
+
+    &::before {
+      content: attr(data-tooltip);
+      display: block;
+      text-align: center;
+      border-radius: 4px;
+      background: inherit;
+      line-height: 1.1;
+      padding: 0.75em 0.95em;
+      color: black;
+      font-size: 1.2em;
+      font-weight: bolder;
+      border: solid 1px black;
+      position: absolute;
+      top: -90%;
+      width: min-content;
+      height: 4em;
+      min-height: min-content;
+      white-space: pre;
+      transition: all 0.3s;
+    }
+
+    &::after {
+      content: "";
+      border: 10px solid transparent;
+      border-top-color: black;
+      position: absolute;
+      top: 15px;
+      left: 50%;
+      margin-left: -10px;
+    }
+
+    &:hover {
+      cursor: help;
+    }
+
+    &:hover::before,
+    &:hover::after {
+      opacity: 1;
+      visibility: visible;
+      box-shadow: 
+        0px 10px 13px -7px #000, 
+        5px 5px 15px 5px rgba(0, 0, 0, 0);
+    }
+  }
+
+  /* stylelint-disable */
+  /* ♔ RULES FACTORY */
+
+  /* rotation modifiers */
   @for $i from 0 to 360 by 30 {
     &--rotated-by-$i {
       transform: rotate($(i)deg);
     }
   }  
 
-  /* generate color modifiers from --colorCodes */
+  /* bg color modifiers from --colorCodes */
   @each $val in var(--colorCodes) {
     &--color-$val {
       grid-area: $val;
@@ -509,14 +566,14 @@
     }
   }
 
-  /* generate color modifiers from --colorCodes */
+  /* color wheel --> border color modifiers from --colorCodes */
   @each $val in var(--colorCodes) {
     &--color-b-$val {
       border-color: var(--$val) transparent transparent transparent;
     }
   }
 
-  /* generate color modifiers from --colorTypes */
+  /* icons --> bg image modifiers from --colorTypes */
   @each $val in var(--colorTypes) {
     &--icon-$val {
       background-image: url("assets/icons/symbol-$(val)-color.svg");
